@@ -1,23 +1,28 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
-gem 'bootstrap-sass'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', '1.3.6'
-gem 'gravatar_image_tag'
+
+
+group :production do
+  # ** Pasted rubyracer here **
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  #gem 'therubyracer', :platform => :ruby
+  # ** Done w/ rubyracer **
+  gem 'pg'
+  gem 'twitter-bootstrap-rails'
+end
 
 group :development do
-    gem 'rspec-rails'
+	#gem 'twitter-bootstrap-rails', :git => "git://github.com/seyhunak/twitter-bootstrap-rails"
+	gem 'rspec-rails'
+	gem 'sqlite3-ruby'
 end
-  
- group :test do
-	gem 'factory_girl_rails'
-    gem 'rspec'
-    gem 'webrat'
-  end
-  
+
+group :test do
+	gem 'rspec'
+	gem 'webrat'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
